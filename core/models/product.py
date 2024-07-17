@@ -3,6 +3,8 @@ from sqlalchemy.orm import Mapped
 
 
 class Product(Base):
-    name: Mapped[str] = "Name"
-    description: Mapped[str] = "Description"
-    price: Mapped[int] = "Price"
+    # __tablename__ = "products"
+
+    name: Mapped[str]
+    description: Mapped[str]
+    price: Mapped[int]

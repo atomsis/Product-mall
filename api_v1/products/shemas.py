@@ -1,4 +1,5 @@
 from pydantic import BaseModel, ConfigDict
+from typing import Optional
 
 
 class ProductBase(BaseModel):
@@ -7,8 +8,18 @@ class ProductBase(BaseModel):
     price: int
 
 
-class ProductCreate(BaseModel):
+class ProductCreate(ProductBase):
     pass
+
+
+class ProductUpdate(ProductCreate):
+    pass
+
+
+class ProductUpdatePartial(ProductCreate):
+    name: Optional[str] = None
+    description: Optional[str] = None
+    price: Optional[int] = None
 
 
 class Product(ProductBase):
